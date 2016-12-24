@@ -31,7 +31,7 @@ def get_data(symbols, start_date, end_date, fill=True):
 
 def get_daily_returns(df):
     daily_returns = df / df.shift(1) - 1
-    daily_returns[0] = 0
+    daily_returns.ix[0, :] = 0
     return daily_returns
 
 def get_normalized(df):

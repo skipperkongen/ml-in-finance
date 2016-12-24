@@ -3,12 +3,12 @@ import matplotlib.pyplot as plt
 
 from util import *
 
-df = get_data(['GOOG', 'AAPL', 'GLD'], '2014-01-10', '2016-01-01')
-
+df = get_data([], '2009-01-10', '2012-12-31')
 dr = get_daily_returns(df)
-rm = get_rolling_mean(df)
-rstd = get_rolling_std(df)
-lower_band, upper_band = get_bollinger_bands(rm, rstd)
-ax = df.plot(title='Prices')
-rm.plot(label='Rolling mean', ax=ax)
+
+print(dr.head())
+
+#df.plot(title='SPY')
+#dr.plot(title='Daily returns', label='SPY')
+dr.hist()
 plt.show()
