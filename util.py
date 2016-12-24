@@ -37,8 +37,8 @@ def get_daily_returns(df):
 def get_normalized(df):
     return df / df.ix[0,:]
 
-def get_bollinger_bands(rm, rstd):
-    return rm + rstd * 2, rm - rstd * 2
+def get_bollinger_bands(rm, rstd, lf=2, uf=2):
+    return rm - rstd * lf, rm + rstd * uf
 
 def get_rolling_mean(df, window=20):
     return df.rolling(center=False,window=window).mean()
