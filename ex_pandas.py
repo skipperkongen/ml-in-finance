@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import pdb
 
 def debug(df, message='DataFrame'):
     print('------')
@@ -55,6 +56,7 @@ rstd_SPY = df_slice.rolling(center=False,window=20).std()
 lower_band, upper_band = rm_SPY + rstd_SPY * 2, rm_SPY - rstd_SPY * 2
 
 # Plot
+"""
 ax = df_slice.plot(title='SPY rolling mean', label='SPY')
 rm_SPY.plot(label='Rolling mean', ax=ax)
 lower_band.plot(label='Lower band', ax=ax)
@@ -63,3 +65,13 @@ ax.set_xlabel('Date')
 ax.set_ylabel('Price')
 ax.legend('upper left')
 plt.show()
+"""
+
+# Daily returns
+daily_returns = df_slice / df_slice.shift(1) - 1
+daily_returns[0] = 0
+print(daily_returns.head())
+
+# fill
+df1.fillna(method='ffill', inplace=True)
+df1.fillna(method='bfill', inplace=True)
