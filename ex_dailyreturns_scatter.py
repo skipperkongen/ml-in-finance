@@ -1,7 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 import numpy as np
-
 from util import *
 
 df = get_data(['SPY', 'XOM', 'GLD'], '2009-01-10', '2012-12-31')
