@@ -1,5 +1,6 @@
 import pandas as pd
 import matplotlib.pyplot as plt
+import math
 
 def get_data(symbols, start_date, end_date, fill=True):
     dates = pd.date_range(start_date, end_date)
@@ -28,6 +29,10 @@ def get_data(symbols, start_date, end_date, fill=True):
         df.fillna(method='bfill', inplace=True)
 
     return df
+
+def get_sharpe_ratio(df, risk_free=0.0):
+    df_summed = df.sum(axis=1)
+    return math.sqrt(252) * (df_summed.mean() - risk_free) / df_summed.std()
 
 def get_daily_returns(df):
     daily_returns = df / df.shift(1) - 1
