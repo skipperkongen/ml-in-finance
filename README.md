@@ -1,15 +1,15 @@
 # README
 
-Single/few stock:
+Important stats:
 
 - Daily returns
     - for multiple stocks
     - histograms: mean, std, kurtosis
     - alpha
     - scatter plots
-- Bolling bands
+- Bolling bands (debatable)
 
-Portfolios:
+Portfolio metrics:
 
 - Cumulative return
 - Average daily return vs. risk-free daily return
