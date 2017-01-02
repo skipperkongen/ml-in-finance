@@ -1,5 +1,7 @@
 # README
 
+My notes for the Udacity course [Machine Learning for Trading](https://www.udacity.com/course/machine-learning-for-trading--ud501).
+
 Important stats:
 
 - Daily returns
